@@ -1,6 +1,7 @@
-@import url(https://db.onlinewebfonts.com/c/2ae387e9fd826eca2b02f780e91333c7?family=AkkuratMono-Regular);
-@import url(https://db.onlinewebfonts.com/c/742dcddc06afc2dfc1ecedd0a42adca0?family=Cardinal+Fruit+Italic);
-@import url(https://db.onlinewebfonts.com/c/2bfe809f5a433474ec388de3ccb69e73?family=Cardinal+Fruit+Medium);
+@font-face {
+  font-family: Akkurat Mono;
+  src: url("./fonts/Akkurat-Mono.woff2") format("woff");
+}
 
 *,
 *::before,
@@ -16,7 +17,7 @@ html {
 
 body {
   color: #131313;
-  font-family: 'AkkuratMono-Regular';
+  font-family: 'Akkurat Mono';
   overscroll-behavior: none;
 }
 
