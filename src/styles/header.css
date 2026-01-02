@@ -1,0 +1,56 @@
+/* Logo SECTION */
+
+.logo-section {
+  width: calc(100% - 1rem);
+  margin-bottom: 20px;
+  padding: 1rem;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 222px;
+}
+
+.right-section,
+.left-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+  margin-top: 10px;
+  width: 250px;
+}
+
+.view-gallery {
+  text-transform: uppercase;
+  text-decoration: underline;
+  margin-left: auto;
+}
+
+.brand {
+  margin-bottom: 20px;
+}
+
+
+@media (width < 1025px) {
+  .logo {
+    width: 155px;
+  }
+
+  .right-section,
+  .left-section {
+    width: 150px;
+  }
+}
+
+@media (width < 650px) {
+  .logo {
+    width: 100px;
+  }
+
+  .right-section,
+  .left-section {
+    width: 100px;
+  }
+}

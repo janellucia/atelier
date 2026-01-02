@@ -1,0 +1,375 @@
+@import url("https://use.typekit.net/yri4mff.css");
+
+@font-face {
+  font-family: Akkurat Mono;
+  src: url("../fonts/Akkurat-Mono.woff2") format("woff2");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #131313;
+  font-family: "Akkurat Mono";
+  overscroll-behavior: none;
+}
+
+button {
+  color: #131313;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Main container */
+
+.container {
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 10px;
+  display: grid;
+  align-content: space-between;
+}
+
+/* Gallery SECTION */
+
+.gallery {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 3.5%;
+  gap: 10px;
+  overflow-x: auto;
+}
+
+.card {
+  grid-column: span 3 / auto;
+}
+
+.card-wide {
+  grid-column: span 4 / auto;
+}
+
+.gallery img {
+  height: auto;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Hide scrollbar */
+
+.gallery {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.gallery::-webkit-scrollbar {
+  display: none;
+}
+
+/* Typography SECTION */
+
+.typography {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: relative;
+  bottom: 15%;
+  user-select: none;
+}
+
+.typography h2 {
+  font-family: "kepler-std-display", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(66px, 5vw, 77px);
+  line-height: 100%;
+  max-width: 1200px;
+  margin: 90px auto 0 auto;
+  text-align: center;
+}
+
+.italic {
+  font-style: italic;
+  text-align: right;
+  margin-left: 20px;
+}
+
+
+/* Full screen */
+
+.full-screen__typography {
+  text-transform: uppercase;
+  line-height: 100%;
+  font-size: 14px;
+}
+
+.full-screen {
+  padding: 10px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.main-img {
+  background-color: hsl(0, 0%, 20%);
+  color: hsl(0, 0%, 100%);
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  height: 100%;
+  width: 100%;
+}
+
+.side-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.side-screen__div {
+  width: 40%;
+}
+
+.side-screen__div img {
+  background-color: hsl(0, 0%, 20%);
+  color: hsl(0, 0%, 100%);
+  margin-bottom: 10px;
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.side-screen__text {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.side-screen__buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Hover Effects */
+
+.view-gallery:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+img:hover {
+  cursor: pointer;
+}
+
+.brand:hover {
+  cursor: unset;
+}
+
+.side-screen__buttons button {
+  border: none;
+  text-transform: uppercase;
+  background-color: inherit;
+}
+
+.side-screen__buttons button:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+/* Tablet */
+
+@media (width < 1025px) {
+  .gallery {
+    grid-auto-columns: 100px;
+    grid-auto-rows: 50vh;
+  }
+
+  .full-screen {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .side-screen {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    align-items: unset;
+    gap: 2rem;
+  }
+
+  .side-screen__div {
+    width: 50%;
+  }
+
+  .side-screen__text {
+    align-items: flex-start;
+    flex-direction: row-reverse;
+  }
+
+  .gallery img {
+    height: auto;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .typography h2 {
+    font-size: clamp(44px, 3vw, 55px);
+  }
+}
+
+/* Phone */
+
+@media (width < 600px) {
+  .container {
+    padding: 5px;
+  }
+
+  .bottom-section {
+    gap: unset;
+  }
+
+  .view-gallery {
+    margin: auto;
+  }
+
+  .typography h2 {
+    font-size: clamp(33px, 2vw, 44px);
+  }
+}
+
+/*  */
+/* Animation */
+/*  */
+
+/* Spinner */
+
+.loader {
+  font-family: "Cardinal Fruit Medium";
+  font-size: clamp(80px, 7vw, 100px);
+  line-height: 100%;
+  font-style: italic;
+  color: #131313;
+  animation: smokeOut 1s ease-in-out infinite alternate;
+  text-shadow: 0 0 1px black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loader:before {
+  content: "atelier";
+}
+
+@keyframes smokeOut {
+  100% {
+    opacity: 0.08;
+    filter: blur(5px);
+    letter-spacing: 4px;
+  }
+}
+
+/* Hover effect for text */
+
+.typography p {
+  position: relative;
+}
+
+.typography p::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
+  background-color: hsl(0, 0%, 30%);
+  scale: 0 1;
+  transition: scale 300ms, translate 500ms;
+  transition-delay: 100ms;
+}
+
+.typography p:hover::after {
+  scale: 1 1;
+}
+
+.typography p:hover+li::after {
+  transition: translateY(-100%);
+}
+
+.typography p:has(+ :hover)::after {
+  transition: translateY(100%);
+}
+
+.typography p:hover {
+  cursor: pointer;
+}
+
+/* Images */
+
+.card {
+  transition: transform 500ms ease-out 100ms;
+}
+
+.card.active {
+  transform: scale(1.05);
+}
+
+.card:first-child.active {
+  transform: translate(7px) scale(1.05);
+}
+
+.card:last-child.active {
+  transform: translate(7px);
+}
+
+.card.shrink-left {
+  transform: translateX(-7px) scale(0.9);
+  filter: blur(2px);
+  opacity: 0.85;
+}
+
+.card.shrink-right {
+  transform: translateX(7px) scale(0.9);
+  filter: blur(2px);
+  opacity: 0.85;
+}
+
+/* Hidden class */
+
+.hidden {
+  display: none;
+}
+
+.btn-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: black;
+  cursor: pointer;
+  z-index: 1000;
+  font-weight: 100;
+  transition: transform 0.2s ease;
+}
+
+.btn-close:hover {
+  transform: scale(1.2);
+}
