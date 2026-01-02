@@ -19,6 +19,7 @@ html {
 
 body {
   color: #131313;
+  background-color: #F4F4F4;
   font-family: "Akkurat Mono";
   overscroll-behavior: none;
 }
